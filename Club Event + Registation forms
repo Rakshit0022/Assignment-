@@ -1,0 +1,136 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Club Event Registration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f4f8;
+            margin: 20px;
+        }
+        header {
+            background: #243b55;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        section {
+            background: white;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 700px;
+            border-radius: 10px;
+        }
+        input, select, button {
+            padding: 10px;
+            margin: 8px 0;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        button {
+            background: #243b55;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #aaa;
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>College Club Event</h1>
+    <p>Join us for an exciting Tech Fest!</p>
+</header>
+
+<section>
+    <h2>Event Details</h2>
+    <p><b>Event:</b> Coding Competition</p>
+    <p><b>Date:</b> 15 November 2026</p>
+    <p><b>Venue:</b> College Auditorium</p>
+</section>
+
+<section>
+    <h2>Registration Form</h2>
+    <form id="eventForm">
+        <label>Full Name</label>
+        <input type="text" id="name" required>
+
+        <label>Email</label>
+        <input type="email" id="email" required>
+
+        <label>Course</label>
+        <select id="course">
+            <option>B.Tech AI</option>
+            <option>B.Tech CSE</option>
+            <option>BCA</option>
+            <option>MCA</option>
+        </select>
+
+        <label>Select Event</label>
+        <select id="event">
+            <option>Coding Competition</option>
+            <option>Tech Quiz</option>
+            <option>Web Design</option>
+        </select>
+
+        <button type="submit">Register Now</button>
+    </form>
+    <p id="message"></p>
+</section>
+
+<section>
+    <h2>Registered Participants</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Course</th>
+                <th>Event</th>
+            </tr>
+        </thead>
+        <tbody id="participants"></tbody>
+    </table>
+</section>
+
+<script>
+document.getElementById("eventForm")
+.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const course = document.getElementById("course").value;
+    const event = document.getElementById("event").value;
+
+    if (!name || !email) return;
+
+    const row = document.createElement("tr");
+
+    [name, course, event].forEach(function(value) {
+        const cell = document.createElement("td");
+        cell.textContent = value;
+        row.appendChild(cell);
+    });
+
+    document.getElementById("participants").appendChild(row);
+    document.getElementById("message").textContent =
+        "Registration successful!";
+
+    this.reset();
+});
+</script>
+
+</body>
+</html>
