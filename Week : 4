@@ -1,0 +1,154 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- 4.4 Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Coding Club Events and Registration">
+
+    <title>Coding Club</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico">
+
+</head>
+<body>
+
+    <!-- Navigation Menu -->
+    <nav>
+        <a href="index.html">Home</a> |
+        <a href="about.html">About</a> |
+        <a href="register.html">Register</a> |
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <h1>Coding Club</h1>
+
+    <!-- Upcoming Events -->
+    <section>
+        <h2>Upcoming Events</h2>
+
+        <table border="1">
+            <caption>Club Events</caption>
+
+            <!-- Table Heading -->
+            <thead>
+                <tr>
+                    <th>Event</th>
+                    <th>Date</th>
+                    <th>Venue</th>
+                </tr>
+            </thead>
+
+            <!-- Table Body -->
+            <tbody>
+                <tr>
+                    <td>HTML Workshop</td>
+                    <td>12 Nov</td>
+                    <td>Lab 1</td>
+                </tr>
+
+                <tr>
+                    <td>Hackathon</td>
+                    <td>20 Nov</td>
+                    <td>Seminar Hall</td>
+                </tr>
+            </tbody>
+
+            <!-- Table Footer -->
+            <tfoot>
+                <tr>
+                    <td colspan="3">Total Events: 2</td>
+                </tr>
+            </tfoot>
+        </table>
+    </section>
+
+    <hr>
+
+    <!-- 4.1 Registration Form -->
+    <section>
+        <h2>Register</h2>
+
+        <form action="#" method="post">
+
+            <!-- Name -->
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name"
+                   placeholder="Your name" required>
+            <br><br>
+
+            <!-- Email -->
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email"
+                   required>
+            <br><br>
+
+            <!-- Password -->
+            <label for="password">Password:</label>
+            <input type="password" id="password"
+                   name="password" required>
+            <br><br>
+
+            <!-- 4.2 Date -->
+            <label for="dob">Date of birth:</label>
+            <input type="date" id="dob" name="dob">
+            <br><br>
+
+            <!-- Phone -->
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone">
+            <br><br>
+
+            <!-- Radio Buttons -->
+            Gender:
+            <input type="radio" id="male" name="gender" value="Male">
+            <label for="male">Male</label>
+
+            <input type="radio" id="female" name="gender" value="Female">
+            <label for="female">Female</label>
+            <br><br>
+
+            <!-- Checkboxes -->
+            Interests:
+            <input type="checkbox" id="web" name="interest" value="Web">
+            <label for="web">Web</label>
+
+            <input type="checkbox" id="dsa" name="interest" value="DSA">
+            <label for="dsa">DSA</label>
+            <br><br>
+
+            <!-- Dropdown -->
+            <label for="branch">Branch:</label>
+            <select id="branch" name="branch">
+                <option>BCA</option>
+                <option>B.Tech</option>
+                <option>MCA</option>
+                <option>BBA</option>
+            </select>
+            <br><br>
+
+            <!-- Textarea -->
+            <label for="msg">Why do you want to join?</label>
+            <br>
+            <textarea id="msg" name="message"
+                      rows="4" cols="30"></textarea>
+            <br><br>
+
+            <!-- Submit Button -->
+            <button type="submit">Register</button>
+
+        </form>
+    </section>
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+        <p>Made by Rakshit</p>
+        <p>© 2026 Coding Club</p>
+    </footer>
+
+</body>
+</html>
