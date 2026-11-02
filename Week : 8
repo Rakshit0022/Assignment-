@@ -1,0 +1,188 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #eef2f8;
+            padding: 10px;
+        }
+
+        /* 8.1 Main Grid Layout */
+        .dashboard {
+            display: grid;
+            grid-template-columns: 1fr 4fr;
+            grid-template-rows: auto 1fr auto;
+            grid-template-areas:
+                "head head"
+                "side main"
+                "foot foot";
+            gap: 10px;
+            min-height: 100vh;
+            padding: 10px;
+        }
+
+        /* Header */
+        .header {
+            grid-area: head;
+            background: #12203a;
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            min-height: 100px;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            grid-area: side;
+            background: #dce7ff;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .sidebar h3 {
+            margin-bottom: 10px;
+        }
+
+        .sidebar ul {
+            padding-left: 20px;
+            line-height: 1.8;
+        }
+
+        /* 8.2 Main Boxes */
+        .main {
+            grid-area: main;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px;
+            align-content: start;
+        }
+
+        /* Dashboard Cards */
+        .box {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            min-height: 65px;
+        }
+
+        .icon {
+            font-size: 22px;
+        }
+
+        .box p {
+            font-size: 13px;
+        }
+
+        .box strong {
+            font-size: 15px;
+        }
+
+        /* Footer */
+        .footer {
+            grid-area: foot;
+            background: #12203a;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            border-radius: 8px;
+            min-height: 75px;
+        }
+
+        /* 8.5 Responsive Design */
+        @media (max-width: 600px) {
+            .dashboard {
+                grid-template-columns: 1fr;
+                grid-template-areas:
+                    "head"
+                    "side"
+                    "main"
+                    "foot";
+            }
+
+            .main {
+                grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <!-- Header -->
+        <header class="header">
+            <h2>My Dashboard</h2>
+        </header>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h3>Menu</h3>
+            <ul>
+                <li>Home</li>
+                <li>Reports</li>
+                <li>Settings</li>
+            </ul>
+        </aside>
+
+        <!-- Main Dashboard -->
+        <main class="main">
+
+            <div class="box">
+                <span class="icon">👤</span>
+                <p><strong>120</strong><br>Users</p>
+            </div>
+
+            <div class="box">
+                <span class="icon">💰</span>
+                <p><strong>Rs 45k</strong><br>Sales</p>
+            </div>
+
+            <div class="box">
+                <span class="icon">📦</span>
+                <p><strong>36</strong><br>Orders</p>
+            </div>
+
+            <div class="box">
+                <span class="icon">⭐</span>
+                <p><strong>4.8</strong><br>Rating</p>
+            </div>
+
+            <div class="box">
+                <span class="icon">💬</span>
+                <p><strong>18</strong><br>Messages</p>
+            </div>
+
+            <div class="box">
+                <span class="icon">✅</span>
+                <p><strong>92%</strong><br>Done</p>
+            </div>
+
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Made with CSS Grid</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
